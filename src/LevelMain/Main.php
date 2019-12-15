@@ -27,15 +27,15 @@ class Main extends PluginBase implements Listener {
         if($config->get('xp') > 0){
 
         } else {
-            Server::GetInstance()->broadcastMessage('§7§l=[ §r§bESPEL §7§l]=§r '.$event->getPlayer()->getName().'§aNous rejoins pour la première fois, bienvenue !');
+            Server::GetInstance()->broadcastMessage('§7§l=[ §r§bFCPE §7§l]=§r '.$event->getPlayer()->getName().'§aNous rejoins pour la première fois, bienvenue !');
             $config->set('xp',10);
             $config->set('level',1);
             $config->save();
             $event->getPlayer()->sendMessage("§7=[§r§eXXXXXXXXXXXXXXXXXXX§7]=");
             $event->getPlayer()->sendMessage("");
-            $event->getPlayer()->sendMessage("§bBienvenue sur le serveur.");
-            $event->getPlayer()->sendMessage("10exp sont offer pour ta première connection !");
-            $event->getPlayer()->sendMessage("Bon jeux à vous !");
+            $event->getPlayer()->sendMessage("§bWelcome to our server.");
+            $event->getPlayer()->sendMessage("Do /level to check your stats !");
+            $event->getPlayer()->sendMessage("Enjoy the Custom Gameplay we offer !");
             $event->getPlayer()->sendMessage("");
             $event->getPlayer()->sendMessage("§7=[§r§eXXXXXXXXXXXXXXXXXXX§7]=");
         }
@@ -53,7 +53,7 @@ class Main extends PluginBase implements Listener {
            } else {
                $config->set('xp',0);
                $config->set('level',$config->get('level') + 1);
-               Server::GetInstance()->broadcastMessage('§7§l=[ §r§bESPEL §7§l]=§r §bWoow, §e'.$n.'§b Est maintenant level §e'.$config->get('level'));
+               Server::GetInstance()->broadcastMessage('§7§l=[ §r§bFCPE §7§l]=§r §bWoow, §e'.$n.'§b Est maintenant level §e'.$config->get('level'));
                $event->getPlayer()->setDisplayName('§7[§bl§e'. $config->get('level').'§7][§eP'. $config->get('prestige').'§7] '.$event->getPlayer()->getName());
                $config->save();
            }
